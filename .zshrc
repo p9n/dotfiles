@@ -10,7 +10,7 @@ alias cls=clear
 alias rm='rm -i'
 export TMUX=/usr/local/bin/tmux
 alias tm="$TMUX -2 attach -t phoenix || $TMUX -2 new -s phoenix"
-export PS1='%F{green}[%n@%m %~]$%F{white} '
+export PS1='%F{37}[%n@%m %~]$%f '
 export LANG='en_US.utf8'
 export LANGUAGE='en_US.utf8'
 export LC_ALL='en_US.utf8'
@@ -48,6 +48,7 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 
+bindkey '^i' expand-or-complete-prefix
 bindkey "^[[Z" reverse-menu-complete
 # zstyle ':completion:*' auto-description 'specify: %d'
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -68,6 +69,8 @@ zstyle ':completion:*' list-grouped true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+zstyle ':completion:*:*:*:packages' ignored-patterns '*'
 
 source ${HOME}/ubuntu_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
