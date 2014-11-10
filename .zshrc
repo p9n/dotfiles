@@ -34,7 +34,7 @@ stty -ixon
 autoload -Uz promptinit
 promptinit
 
-setopt histignorealldups sharehistory
+# setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 # bindkey -e
@@ -71,6 +71,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 zstyle ':completion:*:*:*:packages' ignored-patterns '*'
+
+unsetopt listambiguous
 
 source ${HOME}/ubuntu_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
