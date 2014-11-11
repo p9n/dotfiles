@@ -34,7 +34,7 @@ stty -ixon
 autoload -Uz promptinit
 promptinit
 
-setopt histignorealldups sharehistory
+# setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 # bindkey -e
@@ -72,10 +72,18 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 zstyle ':completion:*:*:*:packages' ignored-patterns '*'
 
+compdef -d adb
+
 source ${HOME}/ubuntu_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+for k in "${(@k)ZSH_HIGHLIGHT_STYLES}"; 
+do 
+    ZSH_HIGHLIGHT_STYLES[$k]=${ZSH_HIGHLIGHT_STYLES[$k]/fg=blue/fg=105}
+done
+
 
 autoload zkbd
-source ${HOME}/.zkbd/${TERM}-${VENDOR}-${OSTYPE}
+# source ${HOME}/.zkbd/${TERM}-${VENDOR}-${OSTYPE}
+source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
 [[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
