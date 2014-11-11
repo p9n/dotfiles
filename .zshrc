@@ -70,7 +70,9 @@ zstyle ':completion:*' list-grouped true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-zstyle ':completion:*:*:*:packages' ignored-patterns '*'
+zstyle ':completion:*:*:*:packages' hidden true
+
+unsetopt listambiguous
 
 compdef -d adb
 
