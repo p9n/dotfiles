@@ -6,7 +6,9 @@ if ($TERM == "vt100")
   set t_AB=1%dm
 endif
 
-source /usr/share/vim/google/google.vim
+if filereadable("/usr/share/vim/google/google.vim")
+  so /usr/share/vim/google/google.vim
+endif
 
 if filereadable($VIMRUNTIME . "/vimrc_example.vim")
  so $VIMRUNTIME/vimrc_example.vim
@@ -26,6 +28,7 @@ set bs=2                " allow backspacing over everything in insert mode
 set ai                  " always set autoindenting on
 set viminfo='20,\"51    " read/write a .viminfo file, don't store more
 set showmatch
+set noundofile
 
 set background=dark     " another is 'light'
 
@@ -104,7 +107,3 @@ inoremap <F5> <Esc>:YcmDiags<CR>
 inoremap <F6> <Esc>:lcl<CR>
 
 let g:netrw_dirhistmax=0
-
-call plug#begin('~/.vim/plugged')
-Plug 'wikitopian/hardmode'
-call plug#end()

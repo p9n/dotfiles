@@ -88,7 +88,7 @@ source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
-source /etc/bash_completion.d/g4d
+[[ -f /etc/bash_completion.d/g4d ]] && source /etc/bash_completion.d/g4d
 
 autoload -Uz catch
 autoload -Uz throw
