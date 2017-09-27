@@ -6,6 +6,8 @@ if ($TERM == "vt100")
   set t_AB=1%dm
 endif
 
+source /usr/share/vim/google/google.vim
+
 if filereadable($VIMRUNTIME . "/vimrc_example.vim")
  so $VIMRUNTIME/vimrc_example.vim
 endif
@@ -41,9 +43,9 @@ endif
 
 " let mysyntaxfile = "~/.vim/syntax/cpp.vim"
 
-set shiftwidth=4
-set ts=4
-set softtabstop=4
+set shiftwidth=2
+set ts=2
+set softtabstop=2
 set fileencoding=utf-8
 set fileencodings=utf-8,big5,sjis
 set encoding=utf-8
@@ -74,12 +76,6 @@ colorscheme kolor
 "     set ambiwidth=double
 " endif
 
-" vundle things
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-
 filetype plugin indent on
 set completeopt=menuone
 let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 1,}
@@ -108,4 +104,8 @@ inoremap <F5> <Esc>:YcmDiags<CR>
 inoremap <F6> <Esc>:lcl<CR>
 
 let g:netrw_dirhistmax=0
+
+call plug#begin('~/.vim/plugged')
+Plug 'wikitopian/hardmode'
+call plug#end()
 

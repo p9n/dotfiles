@@ -8,8 +8,8 @@ alias vi=vim
 alias bye=exit
 alias cls=clear
 alias rm='rm -i'
-export TMUX=/usr/local/bin/tmux
-alias tm="$TMUX -2 attach -t phoenix || $TMUX -2 new -s phoenix"
+export TMUX_BINARY=/usr/local/bin/tmux
+alias tm="$TMUX_BINARY -2 attach -t phoenix || $TMUX_BINARY -2 new -s phoenix"
 export PS1='%F{37}[%n@%m %~]$%f '
 export LANG='en_US.utf8'
 export LANGUAGE='en_US.utf8'
@@ -27,6 +27,8 @@ export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64/'
 export GOPATH=$HOME/go
 export LD_LIBRARY_PATH=/usr/lib/gcc-snapshot/lib/
 export EDITOR=vim
+
+export P4DIFF=vimdiff
 
 # disable ctrl+s/ctrl+q XOFF/XON command
 stty -ixon
@@ -76,13 +78,6 @@ unsetopt listambiguous
 
 compdef -d adb
 
-source ${HOME}/ubuntu_config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-for k in "${(@k)ZSH_HIGHLIGHT_STYLES}"; 
-do 
-    ZSH_HIGHLIGHT_STYLES[$k]=${ZSH_HIGHLIGHT_STYLES[$k]/fg=blue/fg=105}
-done
-
-
 autoload zkbd
 # source ${HOME}/.zkbd/${TERM}-${VENDOR}-${OSTYPE}
 source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
@@ -97,3 +92,5 @@ source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+source /etc/bash_completion.d/g4d
