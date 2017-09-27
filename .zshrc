@@ -90,6 +90,9 @@ source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 
 source /etc/bash_completion.d/g4d
 
+autoload -Uz catch
+autoload -Uz throw
+
 function () {
   local zshrc=$(readlink ${ZDOTDIR:-$HOME}/.zshrc);
   local rc_dir=$(dirname ${zshrc})/.zsh;
