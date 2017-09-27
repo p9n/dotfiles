@@ -108,4 +108,3 @@ let g:netrw_dirhistmax=0
 call plug#begin('~/.vim/plugged')
 Plug 'wikitopian/hardmode'
 call plug#end()
-
