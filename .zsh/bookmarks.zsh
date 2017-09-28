@@ -83,11 +83,6 @@ function() {
       _describe 'values' options
     }
 
-    _bookmark_comp() {
-      # _arguments "-d:::_files -W ${MARKPATH}" '2:::_files'
-      _arguments "-d:::_bookmarks" '2:::_files'
-    }
-
     zstyle ':completion:*:*:bookmark:option-d-1:*' verbose yes
     zstyle ':completion:*:*:bookmark:option-d-1:*' list-separator ' -> '
     compdef '_arguments "-d:::_bookmarks" "2:::_files"' bookmark
