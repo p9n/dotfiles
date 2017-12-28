@@ -92,6 +92,9 @@ source $HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 autoload -Uz catch
 autoload -Uz throw
 
+# disable paste highlighting for zsh >= 5.1
+zle_highlight+=(paste:none)
+
 function () {
   local zshrc=$(realpath ${ZDOTDIR:-$HOME}/.zshrc);
   local rc_dir=$(dirname ${zshrc})/.zsh;

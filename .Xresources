@@ -87,7 +87,7 @@ URxvt*foreground:                     #FFFFFF
 ! URxvt*path:                           search path
 ! URxvt*backgroundPixmap:               file[;geom]
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Ubuntu Mono:size=13
+URxvt*font:                           xft:Ubuntu Mono:size=12
 ! URxvt*font:                           xft:YaHei Consolas Hybrid:bold:size=11
 ! URxvt*font:                           xft:DejaVu Sans Mono:bold:size=10,xft:Andale Mono WT S:bold:size=32
 URxvt*boldFont:                       

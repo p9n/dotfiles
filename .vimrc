@@ -8,6 +8,7 @@ endif
 
 if filereadable("/usr/share/vim/google/google.vim")
   so /usr/share/vim/google/google.vim
+  Glug youcompleteme-google
 endif
 
 if filereadable($VIMRUNTIME . "/vimrc_example.vim")
