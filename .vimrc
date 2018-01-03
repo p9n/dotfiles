@@ -110,4 +110,10 @@ inoremap <F6> <Esc>:lcl<CR>
 let g:netrw_dirhistmax=0
 
 nnoremap <C-s> :update<CR>
-inoremap <C-s> <C-o>:update<CR>
+inoremap <C-s> <Esc>:update<CR>
+
+highlight ColorColumn ctermbg=238
+call matchadd('ColorColumn', '\%>80v', 100)
+
+set listchars=tab:>~,nbsp:_,trail:.
+set list
