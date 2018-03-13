@@ -171,7 +171,7 @@ endif
 
 if &t_Co > 255
   highlight Normal          ctermfg=251     ctermbg=none     cterm=none
-  highlight SpecialKey      ctermfg=111     ctermbg=none    cterm=none
+  highlight SpecialKey      ctermfg=22      ctermbg=none    cterm=none
   highlight NonText         ctermfg=111     ctermbg=none     cterm=none
   highlight Directory       ctermfg=180     ctermbg=none    cterm=none
   highlight IncSearch       ctermfg=0       ctermbg=206     cterm=none
