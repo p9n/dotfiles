@@ -112,6 +112,13 @@ let g:netrw_dirhistmax=0
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
 
+imap <S-Up> <Up>
+imap <S-Down> <Down>
+nmap <S-Up> <Up>
+nmap <S-Down> <Down>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+
 highlight ColorColumn ctermbg=238
 call matchadd('ColorColumn', '\%>80v', 100)
 
