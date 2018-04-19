@@ -125,11 +125,6 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 	else
 		command -nargs=+ HiLink hi def link <args>
 	endif
-	HiLink javaScriptEndColons              Operator
-	HiLink javaScriptOpSymbols              Operator
-	HiLink javaScriptLogicSymbols           Boolean
-	HiLink javaScriptBraces                 Function
-	HiLink javaScriptParens                 Operator
 	HiLink javaScriptTemplateDelim          Preproc
 	HiLink javaScriptTemplateVar            Preproc
 
@@ -175,8 +170,6 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 	HiLink javaScriptFuncDef                PreProc
 	HiLink javaScriptFuncExp                Title
 	HiLink javaScriptFuncArg               	Special
-	HiLink javaScriptFuncComma              Operator
-	HiLink javaScriptFuncEq                 Operator
 
 	delcommand HiLink
 endif
@@ -192,5 +185,3 @@ let b:current_syntax = "javascript"
 if main_syntax == 'javascript'
 	unlet main_syntax
 endif
-syntax region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\s*\* [^[:space:]]\)\@=" containedin=@javaScriptComment contains=@javaScriptAll
-hi link Snip SpecialComment
