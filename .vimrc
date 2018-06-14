@@ -124,3 +124,14 @@ call matchadd('ColorColumn', '\%>80v', 100)
 
 set listchars=tab:>~,nbsp:_,trail:.
 set list
+
+if !empty($CROS_WORKON_SRCROOT)
+  au BufRead,BufNewFile */vboot_reference/*.[ch]
+      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
+
+  au BufRead,BufNewFile */depthcharge/*.[ch]
+      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
+
+  au BufRead,BufNewFile */coreboot/*.[ch]
+      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
+endif
