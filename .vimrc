@@ -24,7 +24,6 @@ syntax on
 set nocompatible
 set wildmenu
 set directory=~/tmp,/var/tmp/vi.recover,/tmp,.
-set backup              " keep a backup file
 set bs=2                " allow backspacing over everything in insert mode
 set ai                  " always set autoindenting on
 set viminfo='20,\"51    " read/write a .viminfo file, don't store more
@@ -32,20 +31,6 @@ set showmatch
 set noundofile
 
 set background=dark     " another is 'light'
-
-" VIM 6.0,
-if version >= 600
-    set nohlsearch
-    set foldmethod=marker
-    set foldlevel=1
-    set encoding=big5
-    set fileencodings=ucs-bom,utf-8,sjis,big5,latin1
-else
-    set fileencoding=taiwan
-endif
-
-
-" let mysyntaxfile = "~/.vim/syntax/cpp.vim"
 
 set shiftwidth=2
 set ts=2
@@ -73,7 +58,6 @@ set mouse=
 set nomodeline
 set hls
 
-" colorscheme diablo3
 colorscheme kolor
 
 " if &encoding == 'utf-8'
@@ -87,7 +71,6 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_extra_conf_globlist = ['~/tmp/webrtc_test/.ycm_extra_conf.py']
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
   \   'objc' : ['->', '.'],
@@ -107,7 +90,7 @@ nnoremap <F6> :lcl<CR>
 inoremap <F5> <Esc>:YcmDiags<CR>
 inoremap <F6> <Esc>:lcl<CR>
 
-let g:netrw_dirhistmax=0
+let g:netrw_dirhistmax = 0
 
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
@@ -125,13 +108,10 @@ call matchadd('ColorColumn', '\%>80v', 100)
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
-if !empty($CROS_WORKON_SRCROOT)
-  au BufRead,BufNewFile */vboot_reference/*.[ch]
-      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
+au BufRead,BufNewFile */{vboot_reference,depthcharge,coreboot}/*.[ch]
+    \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
 
-  au BufRead,BufNewFile */depthcharge/*.[ch]
-      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
-
-  au BufRead,BufNewFile */coreboot/*.[ch]
-      \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
+" disable google whitespace plugin
+if exists(':Glug')
+  Glug whitespace highlight=0
 endif
