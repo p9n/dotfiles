@@ -1,22 +1,24 @@
 [user]
-    name = Aoyama Nanami
-    email = aoyama_nanami@sakurasou
+  name = Aoyama Nanami
+  email = aoyama_nanami@sakurasou
+[color]
+  ui = auto
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [difftool]
-    prompt = false
+  prompt = false
 [alias]
-    d = difftool
-    dt = difftool
-    lg = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-    lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
-    ci = commit
-    st = status
-    co = checkout
-    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-[push]
-    default = simple
+  cp = cherry-pick
+  rb = rebase -i --auto-squash
+  d = difftool
+  dt = difftool
+  lg = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
+  ci = commit
+  st = status
+  co = checkout
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 

@@ -108,7 +108,7 @@ call matchadd('ColorColumn', '\%>80v', 100)
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
-au BufRead,BufNewFile */{vboot_reference,depthcharge,coreboot}/*.[ch]
+au BufRead,BufNewFile */{vboot_reference,depthcharge,coreboot,ec}/*.[ch]
     \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
 
 " disable google whitespace plugin
