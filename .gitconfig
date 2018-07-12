@@ -8,17 +8,17 @@
 [difftool]
   prompt = false
 [alias]
+  ci = commit
+  co = checkout
   cp = cherry-pick
-  rb = rebase -i --auto-squash
   d = difftool
   dt = difftool
   lg = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
   lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
-  ci = commit
-  st = status
-  co = checkout
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+  rb = rebase -i --autosquash
+  st = status
 [merge]
-  tool = vimdiff
   conflictstyle = diff3
+  tool = vimdiff
 
