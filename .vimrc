@@ -111,6 +111,9 @@ set list
 au BufRead,BufNewFile */{vboot_reference,depthcharge,coreboot,ec}/*.[ch]
     \ setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8
 
+au BufRead,BufNewFile */.gitconfig
+    \ setl noexpandtab nosmarttab
+
 " disable google whitespace plugin
 if exists(':Glug')
   Glug whitespace highlight=0
