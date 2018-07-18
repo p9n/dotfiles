@@ -60,10 +60,6 @@ set hls
 
 colorscheme kolor
 
-" if &encoding == 'utf-8'
-"     set ambiwidth=double
-" endif
-
 filetype plugin indent on
 set completeopt=menuone
 let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 1,}
@@ -105,7 +101,7 @@ vmap <S-Down> <Down>
 highlight ColorColumn ctermbg=238
 call matchadd('ColorColumn', '\%>80v', 100)
 
-set listchars=tab:>~,nbsp:_,trail:.
+set listchars=tab:»\ ,nbsp:_,trail:∙
 set list
 
 au BufRead,BufNewFile */{vboot_reference,depthcharge,coreboot,ec}/*.[ch]
