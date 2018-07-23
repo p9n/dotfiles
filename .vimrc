@@ -1,24 +1,4 @@
 " If no screen, use color term
-if ($TERM == "vt100")
-  " xterm-color / screen
-  set t_Co=8
-  set t_AF=1%dm
-  set t_AB=1%dm
-endif
-
-if filereadable("/usr/share/vim/google/google.vim")
-  so /usr/share/vim/google/google.vim
-  Glug youcompleteme-google
-endif
-
-if filereadable($VIMRUNTIME . "/vimrc_example.vim")
- so $VIMRUNTIME/vimrc_example.vim
-endif
-
-if filereadable($VIMRUNTIME . "/macros/matchit.vim")
- so $VIMRUNTIME/macros/matchit.vim
-endif
-
 syntax on
 
 set nocompatible
@@ -61,30 +41,6 @@ set hls
 colorscheme kolor
 
 filetype plugin indent on
-set completeopt=menuone
-let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 1,}
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
-inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
-inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
-nnoremap <F5> :YcmDiags<CR>
-nnoremap <F6> :lcl<CR>
-inoremap <F5> <Esc>:YcmDiags<CR>
-inoremap <F6> <Esc>:lcl<CR>
 
 let g:netrw_dirhistmax = 0
 
@@ -104,18 +60,8 @@ call matchadd('ColorColumn', '\%>80v', 100)
 set listchars=tab:»\ ,nbsp:_,trail:∙
 set list
 
-let s:cros_kernel_style_path = [
-  \ '*/{vboot_reference,depthcharge,coreboot,ec}/*.[ch]',
-  \ '*/third_party/kernel/*.[ch]'
-  \ ]
-
-exe 'au BufRead,BufNewFile ' . join(s:cros_kernel_style_path, ',') .
-  \ ' setl noexpandtab nosmarttab tabstop=8 shiftwidth=8 softtabstop=8'
-
 au BufRead,BufNewFile */.gitconfig
     \ setl noexpandtab nosmarttab
 
-" disable google whitespace plugin
-if exists(':Glug')
-  Glug whitespace highlight=0
-endif
+source ~/.vim/startup/cros.vim
+source ~/.vim/startup/google.vim
