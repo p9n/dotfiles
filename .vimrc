@@ -54,7 +54,6 @@ nmap <S-Down> <Down>
 vmap <S-Up> <Up>
 vmap <S-Down> <Down>
 
-highlight ColorColumn ctermbg=238
 call matchadd('ColorColumn', '\%>80v', 100)
 
 set listchars=tab:»\ ,nbsp:_,trail:∙
