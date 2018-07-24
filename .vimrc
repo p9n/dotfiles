@@ -38,6 +38,9 @@ set mouse=
 set nomodeline
 set hls
 
+set number
+set relativenumber
+
 colorscheme kolor
 
 filetype plugin indent on
