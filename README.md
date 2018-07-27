@@ -1,2 +1,2 @@
-ubuntu_config
+dotfiles
 =============
