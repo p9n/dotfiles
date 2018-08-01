@@ -1,6 +1,10 @@
 # Set up the prompt
 
-alias ls='ls --color -F'
+if [[ "${OSTYPE}" == 'darwin'* ]]; then
+  alias ls='ls -FG'
+else
+  alias ls='ls --color -F'
+fi
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi=vim
