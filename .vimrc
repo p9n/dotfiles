@@ -33,6 +33,7 @@ au BufNewFile,BufRead *.go setfiletype go
 au BufNewFile,BufRead *.json setfiletype javascript
 au BufNewFile,BufRead {*.cpp,*.h} set matchpairs+=<:>
 au BufNewFile,BufRead SConstruct setfiletype python
+au BufNewFile,BufRead {*.gyp,*.gypi} setfiletype python
 
 set mouse=
 set nomodeline
