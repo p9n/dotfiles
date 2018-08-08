@@ -13,7 +13,18 @@
 	cp = cherry-pick
 	d = difftool
 	dt = difftool
-	fix = "!git commit --fixup=${1:-HEAD} && git rebase -i --autosquash #"
+	fix = ! \
+		"git_fix() {" \
+		"  set -ex; " \
+		"  local target_rev=HEAD;" \
+		"  if git rev-parse --verify --quiet $1; then" \
+		"    target_rev=$1;" \
+		"    shift;" \
+		"  fi;" \
+		"  ([ $# -eq 0 ] || git add -- $@);" \
+		"  git commit --fixup=${target_rev};" \
+		"  git rebase -i --autosquash --autostash;" \
+		"}; git_fix"
 	lg = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 	lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
 	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
