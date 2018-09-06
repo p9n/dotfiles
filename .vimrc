@@ -68,3 +68,4 @@ au BufRead,BufNewFile */.gitconfig
 
 source ~/.vim/startup/cros.vim
 source ~/.vim/startup/google.vim
+source ~/.vim/startup/7-billion-humans.vim
