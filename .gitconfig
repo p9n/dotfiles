@@ -15,7 +15,8 @@
 	dt = difftool
 	fix = ! \
 		"git_fix() {" \
-		"  set -ex; " \
+		"  set -ex;" \
+		"  [ \"$GIT_PREFIX\" != \"\" ] && cd \"$GIT_PREFIX\";" \
 		"  local target_rev=HEAD;" \
 		"  if git rev-parse --verify --quiet $1; then" \
 		"    target_rev=$1;" \
