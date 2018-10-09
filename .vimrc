@@ -39,9 +39,6 @@ set mouse=
 set nomodeline
 set hls
 
-set number
-set relativenumber
-
 colorscheme kolor
 
 filetype plugin indent on
@@ -60,12 +57,9 @@ vmap <S-Down> <Down>
 
 call matchadd('ColorColumn', '\%>80v', 100)
 
-set listchars=tab:»\ ,nbsp:_,trail:∙
-set list
-
 au BufRead,BufNewFile */.gitconfig
     \ setl noexpandtab nosmarttab
 
 source ~/.vim/startup/cros.vim
 source ~/.vim/startup/google.vim
-source ~/.vim/startup/7-billion-humans.vim
+source ~/.vim/startup/copymode.vim
