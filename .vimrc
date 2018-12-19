@@ -34,6 +34,8 @@ au BufNewFile,BufRead *.json setfiletype javascript
 au BufNewFile,BufRead {*.cpp,*.h} set matchpairs+=<:>
 au BufNewFile,BufRead SConstruct setfiletype python
 au BufNewFile,BufRead {*.gyp,*.gypi} setfiletype python
+" override default filetype for Makefile.inc
+au BufNewFile,BufRead Makefile.inc set filetype=make
 
 set mouse=
 set nomodeline
