@@ -16,8 +16,8 @@ export PS1='%F{37}[%n@%m %~]$%f '
 export LANG='en_US.utf8'
 export LANGUAGE='en_US.utf8'
 export LC_ALL='en_US.utf8'
-export CXXFLAGS="-O3 -pedantic -Wall -Wvla -std=c++11"
-export CFLAGS="-O3 -pedantic -lm -Wall -std=c99"
+export CXXFLAGS="-O3 -pedantic -Wall -Wvla -std=c++1z"
+export CFLAGS="-O3 -pedantic -lm -Wall -std=c11"
 export TMPDIR="/tmp/"
 export TMP="$TMPDIR"
 export TEMP="$TMPDIR"
