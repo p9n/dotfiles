@@ -60,6 +60,10 @@ call matchadd('ColorColumn', '\%>80v', 100)
 au BufRead,BufNewFile */.gitconfig
     \ setl noexpandtab nosmarttab
 
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+    \ | exe "normal! g'\""
+    \ | endif
+
 source ~/.vim/startup/cros.vim
 source ~/.vim/startup/google.vim
 source ~/.vim/startup/copymode.vim
