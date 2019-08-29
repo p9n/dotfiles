@@ -1,7 +1,14 @@
 # Set up the prompt
 
 if [[ "${OSTYPE}" == 'darwin'* ]]; then
-  alias ls='ls -FG'
+  typeset -U path
+  path+=('/usr/local/bin')
+
+  if type gls >/dev/null; then
+    alias ls='gls --color -F'
+  else
+    alias ls='ls -FG'
+  fi
 else
   alias ls='ls --color -F'
 fi
