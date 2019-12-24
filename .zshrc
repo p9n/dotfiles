@@ -137,3 +137,7 @@ bindkey -s "^[Ol" "+"
 bindkey -s "^[OS" "-"
 bindkey -s "^[OQ" "*"
 bindkey -s "^[OR" "/"
+
+# Ctrl+Left/Right
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word

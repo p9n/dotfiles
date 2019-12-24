@@ -57,7 +57,7 @@ nmap <S-Down> <Down>
 vmap <S-Up> <Up>
 vmap <S-Down> <Down>
 
-call matchadd('ColorColumn', '\%>80v', 100)
+au BufRead,BufNewFile,WinEnter * call matchadd('ColorColumn', '\%>80v', 100)
 
 au BufRead,BufNewFile */.gitconfig
     \ setl noexpandtab nosmarttab
