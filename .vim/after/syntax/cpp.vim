@@ -4,7 +4,9 @@ syn keyword cpp0xOperator  alignof decltype static_assert
 syn keyword cpp0xStatement alignas noexcept override final
 syn keyword cpp0xType      constexpr char16_t char32_t
 syn keyword cpp0xConstant  nullptr
-syn keyword cpp0xConcept   concept concept_map axiom requires late_check
+syn keyword cpp0xConcept   concept requires
+syn keyword cpp20Keyword   constinit consteval co_await co_return co_yield module
+syn keyword cpp20Type      char8_t
 
 syn match cpp0xUCN     display contained "\\\(u\x\{4}\|U\x\{8}\)"
 
@@ -22,6 +24,8 @@ syn match cpp1zFloat /\<\d\('\?\d\)*\.\(e[+-]\?\d\('\?\d\)*\)\?f\?l\?\c/ display
 syn match cpp1zFloat /\<0x\x\('\?\x\)*\.\?p[+-]\?\d\('\?\d\)*f\?l\?\c/ display
 syn match cpp1zFloat /\<0x\(\x\('\?\x\)*\)\?\.\x\('\?\x\)*p[+-]\?\d\('\?\d\)*f\?l\?\c/ display
 
+syn match cpp20Import /^\s*import\>\s*["<]/ display contains=cIncluded
+
 hi def link cpp0xUCN       cSpecial
 hi def link cpp0xOperator  Operator
 hi def link cpp0xStatement cppStatement
@@ -30,5 +34,9 @@ hi def link cpp0xConstant  Constant
 hi def link cpp0xString    cString
 hi def link cpp0xRawString cString
 hi def link cpp0xConcept   cppStructure
-hi def link cpp1zNumber Number
-hi def link cpp1zFloat Number
+hi def link cpp1zNumber    Number
+hi def link cpp1zFloat     Number
+hi def link cpp20Keyword   cppStatement
+hi def link cpp20Module    cppModifier
+hi def link cpp20Type      Type
+hi def link cpp20Import    cppModifier
