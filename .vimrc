@@ -62,6 +62,9 @@ au BufRead,BufNewFile,WinEnter * call matchadd('ColorColumn', '\%>80v', 100)
 au BufRead,BufNewFile */.gitconfig
     \ setl noexpandtab nosmarttab
 
+au FileType go
+    \ setl noexpandtab nosmarttab
+
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
     \ | exe "normal! g'\""
     \ | endif
