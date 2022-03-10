@@ -31,6 +31,7 @@
 	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 	rb = rebase -i --autosquash
 	st = status
+	sw = switch
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
