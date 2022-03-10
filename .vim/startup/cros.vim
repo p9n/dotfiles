@@ -3,6 +3,7 @@ let s:cros_kernel_style_path = [
   \ '*/third_party/kernel/*.[ch]',
   \ '*.dts',
   \ '*.dtsi',
+  \ 'Kconfig*',
   \ ]
 
 exe 'au BufRead,BufNewFile ' . join(s:cros_kernel_style_path, ',') .
