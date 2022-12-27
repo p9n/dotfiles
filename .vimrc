@@ -72,3 +72,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
 source ~/.vim/startup/cros.vim
 source ~/.vim/startup/google.vim
 source ~/.vim/startup/copymode.vim
+
+" https://github.com/vim/vim/issues/11429
+" <End> accidentically captures the home key sequence
+if v:versionlong == 9000813
+  set <End>="^[[1;*F"
+endif
